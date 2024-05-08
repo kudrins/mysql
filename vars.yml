@@ -1,0 +1,10 @@
+---
+vcenter_hostname: 10.100.10.1
+vcenter_username: administrator@vsphere.local
+vcenter_password: password
+
+servers:
+  - { template: t_centos8, name: mysql1, memory_mb: 2048, ip: 10.100.11.124, hostname: mysql1 }
+  - { template: t_centos8, name: mysql2, memory_mb: 2048, ip: 10.100.11.125, hostname: mysql2 }
+  
+

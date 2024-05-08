@@ -1,0 +1,17 @@
+[mysqld]
+pid-file=/var/run/mysqld/mysqld.pid
+log-error=/var/log/mysqld.log
+datadir=/var/lib/mysql
+socket=/var/lib/mysql/mysql.sock
+
+server-id = 2
+log-bin = mysql-bin
+relay-log = relay-log-server
+read-only = ON
+# GTID replication config
+gtid-mode = ON
+enforce-gtid-consistency
+log-replica-updates
+# Эта часть только для слэйва - исключаем репликацию таблиц
+replicate-ignore-table=bet.events_on_demand
+replicate-ignore-table=bet.v_same_event
